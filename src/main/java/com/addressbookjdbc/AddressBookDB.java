@@ -45,6 +45,8 @@ public class AddressBookDB {
         return list;
     }
 
+/*UC17*/
+
     public static int updateContactInfo(String Department_Type, String firstName, String lastName) {
         String query = String.format(
                 "UPDATE address_book SET Department_Type='%s' WHERE firstName='%s' and lastName='%s';", Department_Type,

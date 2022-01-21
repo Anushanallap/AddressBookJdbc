@@ -19,5 +19,11 @@ public class AddressBookTest {
         Assertions Assert = null;
         Assert.assertEquals(8, addresstest.size());
     }
+    @Test
+    public void updateContactInfoTest() {
+        int contact = AddressBookDB.updateContactInfo("makreting","Anusha","Nallapu");
+        Assertions Assert = null;
+        Assert.assertEquals(1, contact);
+    }
 
 }
