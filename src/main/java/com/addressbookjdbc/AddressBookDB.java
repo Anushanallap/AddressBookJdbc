@@ -10,6 +10,7 @@ public class AddressBookDB {
     static String USERNAME = "root";
     static String PASSWORD = "chinni@68";
 
+/*UC16*/
     public static List<AddressBook> retrieveAlltheEntriesInAddressBook() {
 
         try {
