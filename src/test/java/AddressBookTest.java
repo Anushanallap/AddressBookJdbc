@@ -37,5 +37,11 @@ public class AddressBookTest {
         Assertions Assert = null;
         Assert.assertEquals(1, cityorstatetest.size());
     }
-
+    @Test
+    public void addDataIntoAddressBookTransactionTest() throws SQLException {
+        LocalDate start_date = LocalDate.of(2019,03, 01);
+        int result = AddressBookDB.addDatabaseIntoTransaction("bhavitha","potha","sathupally","sales",start_date, "kallur","Telangana",507303,987586412,"bhavi@gmail.com");
+        Assertions Assert = null;
+        Assert.assertEquals(1, result);
+    }
 }
