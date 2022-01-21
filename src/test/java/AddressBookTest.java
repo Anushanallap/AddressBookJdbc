@@ -1,4 +1,5 @@
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -29,6 +30,12 @@ public class AddressBookTest {
         List<AddressBook> dateresult = AddressBookDB.retrieveContactFromDatabase(start_date,end_date);
         Assertions Assert = null;
         Assert.assertEquals(3, dateresult.size());
+    }
+    @Test
+    public void retrieveNumberOfContactsInDbByCityorStateTest() throws SQLException {
+        List<AddressBook> cityorstatetest = AddressBookDB.retrieveContactsByCityorState("kolar");
+        Assertions Assert = null;
+        Assert.assertEquals(1, cityorstatetest.size());
     }
 
 }
