@@ -14,10 +14,11 @@ import org.junit.jupiter.api.Test;
 public class AddressBookTest {
     @Test
     public void retrieveAlltheEntriesInAddressBookTest()
-    {
+    {   
+        AddressBookDB addressbookdb = new AddressBookDB();
         List<AddressBook> addressbooktest = AddressBookDB.retrieveAlltheEntriesInAddressBook();
-        Assertions Assert = null;
-        Assert.assertEquals(8, addresstest.size());
+                Assertions.assertEquals(3,addressbooktest.size());
+
     }
 
 }
