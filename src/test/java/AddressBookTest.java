@@ -15,7 +15,7 @@ public class AddressBookTest {
     @Test
     public void retrieveAlltheEntriesInAddressBookTest()
     {
-        List<AddressBook> addresstest = AddressBookDB.retrieveAlltheEntriesInAddressBook();
+        List<AddressBook> addressbooktest = AddressBookDB.retrieveAlltheEntriesInAddressBook();
         Assertions Assert = null;
         Assert.assertEquals(8, addresstest.size());
     }
