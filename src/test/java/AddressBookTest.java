@@ -15,15 +15,16 @@ public class AddressBookTest {
     @Test
     public void retrieveAlltheEntriesInAddressBookTest()
     {
+         AddressBookDB addressbookdb = new AddressBookDB();
         List<AddressBook> addresstest = AddressBookDB.retrieveAlltheEntriesInAddressBook();
-        Assertions Assert = null;
-        Assert.assertEquals(8, addresstest.size());
+                Assertions.assertEquals(3,addressbooktest.size());
     }
     @Test
     public void updateContactInfoTest() {
+        
+         AddressBookDB addressbookdb = new AddressBookDB();
         int contact = AddressBookDB.updateContactInfo("makreting","Anusha","Nallapu");
-        Assertions Assert = null;
-        Assert.assertEquals(1, contact);
+                Assertions.assertEquals(1,contact());
     }
 
 }
