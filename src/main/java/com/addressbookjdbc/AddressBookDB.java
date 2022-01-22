@@ -104,14 +104,14 @@ public class AddressBookDB {
 
     }
 /*UC19*/
-    public static List<AddressBook> retrieveContactsByCityorState(String city) {
+    public static List<AddressBook> retrieveContactsByCityorState(String state) {
 
         try {
             Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-            PreparedStatement pstmt = con.prepareStatement("SELECT *  FROM address_book WHERE city=?");
-            pstmt.setString(1, city);
+            PreparedStatement ps = con.prepareStatement("SELECT *  FROM address_book WHERE city=?");
+            ps.setString(1, state);
 
-            ResultSet rs = pstmt.executeQuery();
+            ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new AddressBook(rs.getString("firstName"), rs.getString("lastName"), rs.getString("address"),
                         rs.getString("Department_Type"), rs.getString("city"), rs.getString("state"),
@@ -121,7 +121,7 @@ public class AddressBookDB {
 
             }
             rs.close();
-            pstmt.close();
+            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
