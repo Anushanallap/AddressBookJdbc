@@ -12,23 +12,26 @@ public class AddressBookTest {
     @Test
     public void retrieveAlltheEntriesInAddressBookTest()
     {
+        AddressBookDB addressbookdb = new AddressBookDB();
         List<AddressBook> addresstest = AddressBookDB.retrieveAlltheEntriesInAddressBook();
-        Assertions Assert = null;
-        Assert.assertEquals(8, addresstest.size());
+                Assertions.assertEquals(3,addressbooktest.size());
     }
     @Test
     public void updateContactInfoTest() {
+        
+        AddressBookDB addressbookdb = new AddressBookDB();
+        List<AddressBook> addresstest = AddressBookDB.updatecontactinfotetsInAddressBook();
         int contact = AddressBookDB.updateContactInfo("makreting","Anusha","Nallapu");
-        Assertions Assert = null;
-        Assert.assertEquals(1, contact);
+       Assertions.assertEquals(1, contact());
     }
     @Test
     public void retrieveContactFromDatabaseTest() {
+        
+        AddressBookDB addressbookdb = new AddressBookDB();
         LocalDate start_date = LocalDate.of(2021,10,02);
         LocalDate end_date = LocalDate.of(2022,11,05);
         List<AddressBook> dateresult = AddressBookDB.retrieveContactFromDatabase(start_date,end_date);
-        Assertions Assert = null;
-        Assert.assertEquals(3, dateresult.size());
+        Assertions.assertEquals(2, Dateresult.size());
     }
 
 }
