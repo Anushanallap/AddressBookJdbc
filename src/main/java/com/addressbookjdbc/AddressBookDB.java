@@ -10,8 +10,11 @@ public class AddressBookDB {
     static String USERNAME = "root";
     static String PASSWORD = "chinni@68";
 
-/*UC16*/
-    public static List<AddressBook> retrieveAlltheEntriesInAddressBook() {
+/*UC16
+	 * Ability for the AddressBook Service to retrieve all the Entries from the DB
+	 * @param It retrieve the All entries in Address Book.
+	 * @return It returns the Address Book data in list.
+	 */    public static List<AddressBook> retrieveAlltheEntriesInAddressBook() {
 
         try {
 
