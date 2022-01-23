@@ -11,8 +11,12 @@ public class AddressBookDB {
     static String USERNAME = "root";
     static String PASSWORD = "chinni@68";
 
-/*UC16*/
-    public static List<AddressBook> retrieveAlltheEntriesInAddressBook() {
+
+/*UC16
+	 * Ability for the AddressBook Service to retrieve all the Entries from the DB
+	 * @param It retrieve the All entries in Address Book.
+	 * @return It returns the Address Book data in list.
+	 */    public static List<AddressBook> retrieveAlltheEntriesInAddressBook() {
 
         try {
 
@@ -46,8 +50,14 @@ public class AddressBookDB {
         return list;
     }
 
-/*UC17*/
-
+/*UC17
+	 * Ability to update the Contact Information in the address book for a person and ensure that the Contact Information in the
+	 * memory is in Sync with the DB
+	 * @param Department_Type
+	 * @param firstName
+	 * @param lastName
+	 * @return
+	 */
     public static int updateContactInfo(String Department_Type, String firstName, String lastName) {
         String query = String.format(
                 "UPDATE address_book SET Department_Type='%s' WHERE firstName='%s' and lastName='%s';", Department_Type,
@@ -71,8 +81,13 @@ public class AddressBookDB {
         return 0;
     }
 
-/*UC18*/
-
+/*UC18
+	  Ability to Retrieve Contacts from the Database that were added in a particular
+	 * period - Use ADO.NET
+	 * @param start_date.
+	 * @param end_date.
+	 * @return It returns the Address Book data in list.
+	 */
     public static List<AddressBook> retrieveContactFromDatabase(LocalDate start_date, LocalDate end_date) {
         String query = String.format("select * FROM addressbooksystem where start_date BETWEEN '%s' AND '%s';",
                 Date.valueOf(start_date), Date.valueOf(end_date));
@@ -103,8 +118,11 @@ public class AddressBookDB {
         return list;
 
     }
-/*UC19*/
-    public static List<AddressBook> retrieveContactsByCityorState(String state) {
+/*UC19
+	 * Ability to Retrieve number of Contacts in the Database by City or State
+	 * @param city
+	 * @return It returns the Address Book data in list.
+	 */    public static List<AddressBook> retrieveContactsByCityorState(String state) {
 
         try {
             Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
