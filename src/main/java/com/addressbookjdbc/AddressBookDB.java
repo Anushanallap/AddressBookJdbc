@@ -11,8 +11,11 @@ public class AddressBookDB {
     static String USERNAME = "root";
     static String PASSWORD = "chinni@68";
 
-/*UC16*/
-    public static List<AddressBook> retrieveAlltheEntriesInAddressBook() {
+/*UC16
+	 * Ability for the AddressBook Service to retrieve all the Entries from the DB
+	 * @param It retrieve the All entries in Address Book.
+	 * @return It returns the Address Book data in list.
+	 */    public static List<AddressBook> retrieveAlltheEntriesInAddressBook() {
 
         try {
 
@@ -46,8 +49,11 @@ public class AddressBookDB {
         return list;
     }
 
-/*UC17*/
-
+/*UC16
+	 * Ability for the AddressBook Service to retrieve all the Entries from the DB
+	 * @param It retrieve the All entries in Address Book.
+	 * @return It returns the Address Book data in list.
+	 */
     public static int updateContactInfo(String Department_Type, String firstName, String lastName) {
         String query = String.format(
                 "UPDATE address_book SET Department_Type='%s' WHERE firstName='%s' and lastName='%s';", Department_Type,
@@ -71,8 +77,13 @@ public class AddressBookDB {
         return 0;
     }
 
-/*UC18*/
-
+/*UC18
+	  Ability to Retrieve Contacts from the Database that were added in a particular
+	 * period - Use ADO.NET
+	 * @param start_date.
+	 * @param end_date.
+	 * @return It returns the Address Book data in list.
+	 */
     public static List<AddressBook> retrieveContactFromDatabase(LocalDate start_date, LocalDate end_date) {
         String query = String.format("select * FROM addressbooksystem where start_date BETWEEN '%s' AND '%s';",
                 Date.valueOf(start_date), Date.valueOf(end_date));
